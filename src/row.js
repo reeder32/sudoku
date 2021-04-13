@@ -3,9 +3,7 @@ export default function Row() {
 }
 
 Row.prototype.addNumber = function (number, index) {
-  if (isNaN(number)) {
-    return false;
-  } else {
+  if (!isNaN(number) && (index >= 0 && index <= 2)) {
     this.values[index] = number;
   }
 }

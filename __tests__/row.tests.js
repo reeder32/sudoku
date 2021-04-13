@@ -17,6 +17,11 @@ describe('Row()', () => {
 
   test('should return false if passed a non-number argument', () => {
     row.addNumber("hello", 0);
-    expect(false);
+    expect(row.values.length[0]).toEqual(undefined);
+  });
+
+  test('should return false if index value is not between 0 - 2', () => {
+    row.addNumber(3, 4);
+    expect(row.values).toEqual([undefined, undefined, undefined]);
   });
 });
