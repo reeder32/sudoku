@@ -24,4 +24,10 @@ describe('Row()', () => {
     row.addNumber(3, 4);
     expect(row.values).toEqual([undefined, undefined, undefined]);
   });
+
+  test('should return false if number is not between 1-9', () => {
+    row.addNumber(10, 1);
+    expect(row.values).toEqual([undefined, undefined, undefined]);
+  });
+
 });
