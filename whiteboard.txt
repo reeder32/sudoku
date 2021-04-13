@@ -1,0 +1,16 @@
+Row = [1,2,3]
+
+Column = [
+        Row[0]
+        ]             
+Square = [
+          Row
+          Row
+          Row
+          ]
+
+Board = [
+        Square, Square, Square
+        Square, Square, Square
+        Square, Square, Square
+        ]

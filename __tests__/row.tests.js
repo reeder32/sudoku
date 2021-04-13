@@ -11,23 +11,29 @@ describe('Row()', () => {
   });
 
   test('should insert number into given index', () => {
-    row.addNumber(2, 1);
+    row.addNumberToRow(2, 1);
     expect(row.values[1]).toEqual(2);
   });
 
-  test('should return false if passed a non-number argument', () => {
-    row.addNumber("hello", 0);
+  test('should return undefined if passed a non-number argument', () => {
+    row.addNumberToRow("hello", 0);
     expect(row.values.length[0]).toEqual(undefined);
   });
 
-  test('should return false if index value is not between 0 - 2', () => {
-    row.addNumber(3, 4);
+  test('should return undefined array if index value is not between 0 - 2', () => {
+    row.addNumberToRow(3, 4);
     expect(row.values).toEqual([undefined, undefined, undefined]);
   });
 
-  test('should return false if number is not between 1-9', () => {
-    row.addNumber(10, 1);
+  test('should return undefined array if number is not between 1-9', () => {
+    row.addNumberToRow(10, 1);
     expect(row.values).toEqual([undefined, undefined, undefined]);
   });
 
+  test('should loop through the rows numbers to determine if the numbers match, if they do match return "These numbers match"', () => {
+    row.addNumberToRow(8, 2);
+    row.addNumberToRow(8, 1);
+    expect(row.values).toEqual([undefined, undefined, 8]);
+  });
 });
+
